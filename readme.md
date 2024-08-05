@@ -873,17 +873,125 @@ console.log(add(5,3))
 
 
 ## What are Arrow Functions in JS? What is it use?
+  - Arrow FUnction, also known as fat arrow functions, is a **simpler and shorter** way to defining functions in javascript
 
-## 42. Placeholder question 42
+## What are **Callback Functions**? What is it use?
+  - A callback function is a function that  is **passed as an arguement** to another function
+```javascript
+function add(x,y){
+    return x + y
+}
 
-## 43. Placeholder question 43
+let a  = 3, b = 5;
+let result  = add(a,b)
+console.log(result)
+// Output:8
 
-## 44. Placeholder question 44
+function display (x, y , operation){
+    var result   = operation(x, y)
+    console.log(result)
+}
+display(10,5,add)
+```
+## What is Highe-order-function in JS
+  - A Function which accepts one or more callback function is a **Higher Order Function**
+  - when Function return a fucntion as a result is also a higher order function 
+-  Higher Order Function
+    1.  Take one or more functions as **arguements** (callback function) OR
+    2.  **return** a function as a result
+**1st Type**
+```javascript
+// Take one or more functions as arguments
+function hof(func){
+    func()
+}
+hof(sayHello)
+function sayHello(){
+    console.log('Hello!')
+}
+//Output:hello
+```
+**2nd Type**
+```javascript
+// Retrun a function as a result
+fucntion createAdder(number){
+    return function (value){
+        return value + number
+    };
+}
+const addFive = createAdder(5)
 
-## 45. Placeholder question 45
+console.log(addFive(2))
 
-## 46. Placeholder question 46
+// Output:7
+```
+## What is the difference between **arguements** and **parameters**?
+  - Parameters are the **placeholders** defined in the function declaration
+```javascript
+// a and b are parameters
+function add(a,b){
+    console.log(a+b)
+}
+```
+  - Arguements are the **actual values passed** to a function when it is  called or invoked
+```javascript
+add(3,4)
+// 3 and 4 are arguements
+```
+## In how many ways can you **pass arguements** to a function?
+  - Positional Arguements
+  - Named Arguements
+  - Arguements Object
+**Positional Arguements**
+```javascript
+// positional Arguements 
+function add(a,b){
+    console.log(a+b)
+}
+add(3,4);
+// output:7
+```
+**Named Arguements**
+```javascript            
+var person ={
+    name:"Happy",
+    role:"Developer"
+};
 
+function greet(person){
+    console.log(person.name+""+person.role)
+}
+greet(person);
+// output:Happy Developer
+```
+**Arguements Object**
+```javascript
+sum(1,2,3)
+
+// Arguements object
+fucntion sum(){
+    console.log(arguements[0])
+    // Output:1
+    console.log(arguements[1])
+    // Output:2
+    console.log(arguements[2])
+    // Output:3
+    console.log(arguements.length)
+    // Output:3
+}
+```
+## How do you use **default parameters** in a function?
+ - In javascript, default parameters allow you to specify **default values** for function paramters
+```javascript
+// Function with default parameter value
+function greet(name = 'yusrin'){
+    console.log('hello,' + name + '!')
+}
+greet()
+// Output:hello,yusrin!
+greet('Misfer')
+// Output:hello,Misfer!
+```
 ## 47. Placeholder question 47
 
 ## 48. Placeholder question 48
