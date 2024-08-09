@@ -873,7 +873,7 @@ console.log(add(5,3))
 
 
 ## What are Arrow Functions in JS? What is it use?
-  - Arrow FUnction, also known as fat arrow functions, is a **simpler and shorter** way to defining functions in javascript
+  - Arrow Function, also known as fat arrow functions, is a **simpler and shorter** way to defining functions in javascript
 
 ## What are **Callback Functions**? What is it use?
   - A callback function is a function that  is **passed as an arguement** to another function
@@ -981,7 +981,7 @@ fucntion sum(){
 }
 ```
 ## How do you use **default parameters** in a function?
- - In javascript, default parameters allow you to specify **default values** for function paramters
+ - In javascript, default parameters allow you to specify **default values** for function paramters.
 ```javascript
 // Function with default parameter value
 function greet(name = 'yusrin'){
@@ -992,14 +992,117 @@ greet()
 greet('Misfer')
 // Output:hello,Misfer!
 ```
-## 47. Placeholder question 47
+## What is the use of **event handling** in JS?
+  - Event handling is the process of **responding to user actions** in a web page
+  - The **addEventListener** method of javascript allows to attach an **event name** and with the **function** you want to perform on that event.
+```javascript
+<button id = 'myButton'>Click me</button>
+// Get a reference to the button element
+const button = document.getElementById('myButton');
 
-## 48. Placeholder question 48
+// Add an event listener for the 'click' event
+button.addEventListener('click',function(){
+      alert('Button clicked!')
+})
+```
+## What are **First-Class** fucntions in JS?
+ - A programming language is said to have First-Class-functions in that language are treated like **Other Variables**
+**Functions trated like variables**
+-  Assignable
+-  Passable as Arguements
+-  Retrunable as Values
+```Javascript
+// 1. Assigning functions like a variable
+const myFunction  = function (){
+    console.log('Interview,Happy')
+};
+myFunction(); //Output:"Interview,Happy"
 
-## 49. Placeholder question 49
 
-## 50. Placeholder question 50
+function double(number){
+    return number * 2;
+}
+// 2. Passing function as an arguement like a variable
+function performOperation(double,value){
+    return double(value)
+}
+console.log(performOperation(double,5))  //Output:10
 
+
+// 3. A function that returns another function 
+function createSimpleFunction(){
+    return function(){
+        console.log('I am Return function')
+    }
+}
+const simpleFunction  = createSimpleFunction()
+simpleFunction()  //Output:I am Return function
+```    
+## What are **Pure** and **Impure** fucntions in JS?
+  - **Pure Function**
+     - A pure function is a function that always produces the **same output for the same input**
+     - Pure functions cannot modify the **state**
+     - Pure functions cannot have **side Effects**
+```Javascript
+
+// Pure function
+function add(a,b){
+    return a + b;
+}
+console.log(add(3,5));
+// output: 8
+
+// If we call multiple times with the same arguements we get the same output 
+console.log(add(3,5));
+// same output:8
+```
+ - **Impure Function**
+   -   An impure function,can produce **different outputs for the same input**
+   -   Impure functions can modify the state
+   -   Impure functions can have **side effects**
+```javascript
+// Impure function
+let total = 0;
+
+function addToTotal = (value){
+    total += value
+    return total
+}
+console.log(addToTotal(5))
+// Output:5
+
+// If I change total = 5
+console.log(addToTotal(5))
+// Not same output:10
+```
+## What is function currying?
+  - Currying in the javascript transforms a function with multiple arguments into a **nested series of functions,** each taking a single arguement.
+  - Advantage: **Reusability,modularity,and specilization,** Big, complex functions with multiple arguements can be broken down into small,reusable functions with fewer arguements.
+```javascript
+// Regular function that takes two arguements and return thei product
+
+function multiply (a,b){
+    return a * b 
+}
+
+// Curried version of the multiply function 
+function curriedMultiply(a){
+    return function (b){
+        return a * b
+    }
+}
+
+// Create a specialized function for doubling a number 
+const double  = curriedMulitply(2){
+    console.log(double(5))
+    // Output:10 (2 * 5)
+}
+
+// create a specilized function for tripling a number 
+const triple  = curriedMultiply(3)
+console.log(triple(5))
+// Output:15 (3 * 5)
+```
 ## 51. Placeholder question 51
 
 ## 52. Placeholder question 52
