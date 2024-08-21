@@ -298,7 +298,7 @@ if(x>10){
 }
 // Output: '3'
 ```
-*  **Ternary operator **
+*  **Ternary operator**
 ```javascript
 let  y = 20;
 let  z = y > 10 ? "1" : "0";
@@ -1103,20 +1103,125 @@ const triple  = curriedMultiply(3)
 console.log(triple(5))
 // Output:15 (3 * 5)
 ```
-## 51. Placeholder question 51
+## What are **call**,**apply** and **bind** methods in JS?
+ - call,apply,and bind are three methods in javascript that are used to work with functions and **control how they are invkoked** and what context they operate in.
+ - THese method provide a way to manipulate the **this value** and pass arguements to fucntions. 
+```Javascript
+// Defining a fucntion that uses the 'this' context and an arguement 
+function sayHello(message){
+    console.log(`${message},${this.name}`)
+}
+const person = {name:"Happy"}
 
-## 52. Placeholder question 52
+// 1.Call  - Using the 'call' method to invoke the function 
+// with a specific context and arguement
+sayHello.call(person,'Hello');
+// Output:"Hello,Happy"
 
-## 53. Placeholder question 53
+// 2.Apply  - using the 'Apply' method to invoke the function 
+// with a specific context and an array of arguments 
+sayHello.apply(person,['Hi'])
+// output:'Hi,Happy'
 
-## 54. Placeholder question 54
+// 3.Bind  - Using the 'Bind' method to create a new function 
+// with a specific context (mot invoking it immediately)
+const greetPerson = sayHello.bind(person)
+greetPerson('greetings')
+// Output:'greetings,Happy'
+```
 
-## 55. Placeholder question 55
+**CHAPTER-7:STRING**
 
-## 56. Placeholder question 56
+## What is a **String**? 
+ - A String is a **data type** used to **store and manipulate data**
 
-## 57. Placeholder question 57
+```javascript
+// Single Quotes ('')
+var str1 = 'Hello';
+```
 
+## What are **template literal** and **string interpolation** in strings?
+ - A template literal, also known as a template string, is a feature introduces in ECMAScript 2015(ES6) for **string interpolation** and **multiline strings** in javascript.
+```Javascript
+// Backticks(``)
+// Template lierals with string interpolation
+var myName  = 'Happy'
+var str3 = `Hello ${myname}`
+console.log(str3)
+// output: Hello Happy
+
+// Template literals for multiline strings
+var multilineStr = `
+This is a multiline string
+`
+```
+## What is difference between **single quotes('')**,**double quotes('')** & **backticks(``) **?
+```Javascript
+
+// Single Quotes ('')
+var str1 = 'Hello';
+
+// Double Quotes ("")
+var str1 = "Hello";
+
+// Backticks(``)
+// Template lierals with string interpolation
+var myName  = 'Happy'
+var str3 = `Hello ${myname}`
+console.log(str3)
+// output: Hello Happy
+
+// Template literals for multiline strings
+var multilineStr = `
+This is a multiline string
+`
+```
+## What are some important **string operations** in JS?
+```Javascript
+// Add multiple string
+let str1 = 'Hello'
+let str2 = 'World'
+
+let result = str1 + " " + str2
+console.log(result);
+// Output : Hello World
+
+// Using concat() method 
+let result2 = str1.concat(" ",+str2);
+console.log(result2)
+// Output : Hello World
+
+// Extract a portion of a string
+let subString = result.substring(6,11)
+console.log(6,11) // start Index to end Index
+// Output : World
+
+// Retrieve the length of a string 
+console.log(result.length)
+// Output:11
+
+// Convert a string to uppercase or lowercase 
+console.log(result.toUpperCase())
+// Output :HELLO WORLD 
+console.log(result.tolowerCase())
+// Output:hello world
+
+// Split a string into an array of substrings
+// based on a delimeter
+let arr = result.split(' ')
+console.log(arr)
+// Output:["Hello","World"]
+
+// Replace occurances of a substring within a string 
+console.log(result.replace('World','Javascript'))
+// output:Hello Javascript
+
+// Remove leading and trailing whitespace
+let str = '     Hello World     '
+let trimmedStr  = str.trim()
+console.log(trimmedStr);
+// Output:Hello World
+```
 ## 58. Placeholder question 58
 
 ## 59. Placeholder question 59
