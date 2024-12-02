@@ -1,7 +1,8 @@
 # JavaScript Interview Questions
 
-## 1. What is Scope in JavaScript?
-Scope determines where variables are defined and where they can be accessed.
+## 1. What is Scope & Scope Chain in JavaScript?
+ - **Scope:** Scope determines where variables are defined and where they can be accessed.
+ - **Scope Chaining:** Scope chain in Javascript is looking for variables.If variable not found in current scope javascript looks that variable for its next outer scope. and keeps looking the outward until it reaches the Global Scope.
 
 ## 2. What is the type of variable in JS when it is defined without using the `var`, `let`, or `const` keywords?
 ```javascript
@@ -807,7 +808,7 @@ array.forEach(function(item){
 });
 // Error:Illegal break statement
 ```
-**CHAPTER-6 FUNCTION**
+## CHAPTER-6 FUNCTION
 
 ## What are **FUNCTION** in JS? What are the types of funtion?
   - A function is a **reusable block of code** that performs a specific task
@@ -888,7 +889,7 @@ console.log(result)
 // Output:8
 
 function display (x, y , operation){
-    var result   = operation(x, y)
+    var result   = operation(x + y)
     console.log(result)
 }
 display(10,5,add)
@@ -1103,6 +1104,22 @@ const triple  = curriedMultiply(3)
 console.log(triple(5))
 // Output:15 (3 * 5)
 ```
+## What is Closure in JavaScript?
+ - In Javascript **Closure** is created when a function remembers and accesses variables from its outer function,even after the function outer function has already finished executing.
+```Javascript
+function outerFunction(){
+    let message = 'Hello from the outer function!'
+
+    function innerFunction(){
+        console.log(message)
+    }
+
+    return innerFunction
+}
+
+const inner  = outerFunction()
+inner() //Output:"Hello from the outer function!"
+```
 ## What are **call**,**apply** and **bind** methods in JS?
  - call,apply,and bind are three methods in javascript that are used to work with functions and **control how they are invkoked** and what context they operate in.
  - THese method provide a way to manipulate the **this value** and pass arguements to fucntions. 
@@ -1130,7 +1147,7 @@ greetPerson('greetings')
 // Output:'greetings,Happy'
 ```
 
-**CHAPTER-7:STRING**
+## CHAPTER-7:STRING
 
 ## What is a **String**? 
  - A String is a **data type** used to **store and manipulate data**
@@ -1222,13 +1239,30 @@ let trimmedStr  = str.trim()
 console.log(trimmedStr);
 // Output:Hello World
 ```
-## 58. Placeholder question 58
+## What is string immutability?
+ - Strings in Javascript are considered **immutable** because you **cannot modify** the contents of an existring string directly
+```javascript
 
-## 59. Placeholder question 59
+var str  ='javascript'
 
-## 60. Placeholder question 60
+// creates a new string 
+str = str  + ' Happy'
+```
+## In how many ways you can **concatenate strings?**
+ - +Operator
+ - Concat() method 
+ - Template literals
+ - Join() method
 
-## 61. Placeholder question 61
+## Chapter 8:DOM
+
+## What is DOM? What is the difference between HTML and DOM?
+ - The DOM (Document Object Model) represents the web page as a **tree-like structure** that allows javascript to dynamically access and manipulate the content and structure of a web page.
+
+## Chapter 9:Error Handling
+
+## What is Error Handling in JS?
+ - 
 
 ## 62. Placeholder question 62
 
